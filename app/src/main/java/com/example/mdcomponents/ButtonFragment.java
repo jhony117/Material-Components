@@ -8,12 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mdcomponents.utils.Component;
+import com.example.mdcomponents.utils.Constants;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ButtonFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class ButtonFragment extends Fragment {
+
+    public static final String TAG = "Button";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,8 +29,17 @@ public class ButtonFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private static Component mInstance;
     public ButtonFragment() {
         // Required empty public constructor
+    }
+
+    public static Component getmInstance() {
+        mInstance = new Component();
+        mInstance.setName(TAG);
+        mInstance.setPhotoRes(R.drawable.img_button);
+        mInstance.setType(Constants.SCROLL);
+        return mInstance;
     }
 
     /**

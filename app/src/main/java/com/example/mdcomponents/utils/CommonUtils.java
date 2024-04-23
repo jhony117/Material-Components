@@ -3,6 +3,8 @@ package com.example.mdcomponents.utils;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.mdcomponents.ButtonFragment;
+
 public class CommonUtils {
 
     public static void setFragment(AppCompatActivity activity, String nameFragment, int contentRes){
@@ -17,6 +19,9 @@ public class CommonUtils {
 
         switch (nameFragment) {
             //SCROLL
+            case ButtonFragment.TAG:
+                 fragment = new ButtonFragment();
+                 break;
 
             //STATIC
         }

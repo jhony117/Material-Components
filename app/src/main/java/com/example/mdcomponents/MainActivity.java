@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private void confingRecyvlerView() {
         binding.recyclerView.setAdapter(mAdapter);
+        mAdapter.add(ButtonFragment.getmInstance());
     }
 
 
