@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.butterknife)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     annotationProcessor(libs.annotationButterKnife)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

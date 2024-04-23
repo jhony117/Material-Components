@@ -1,5 +1,6 @@
 package com.example.mdcomponents;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -7,18 +8,65 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.mdcomponents.adapters.ComponentAdapter;
+import com.example.mdcomponents.databinding.ActivityMainBinding;
+import com.example.mdcomponents.utils.Component;
+import com.example.mdcomponents.utils.Constants;
+import com.example.mdcomponents.utils.OnClickListener;
 
+import java.util.ArrayList;
+
+import butterknife.BindView;
+
+public class MainActivity extends AppCompatActivity implements OnClickListener {
+
+    private ActivityMainBinding binding;
+
+    private ComponentAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+
+
+        setContentView(binding.getRoot());
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        confingAdapter();
+        confingRecyvlerView();
+    }
+
+    private void confingAdapter() {
+        mAdapter = new ComponentAdapter(new ArrayList<>(), this);
+    }
+
+    private void confingRecyvlerView() {
+        binding.recyclerView.setAdapter(mAdapter);
+    }
+
+
+
+//OnClickListener
+    @Override
+    public void onClick(Component component) {
+      Intent intent;
+       if(component.getType() == Constants.SCROLL){
+           intent = new Intent(this, ScrollActivity.class);
+       } else { // STATIC
+           intent = new Intent(this, StaticActivity.class);
+       }
+       intent.putExtra(Constants.ARG_NAME, component.getName());
+       startActivity(intent);
     }
 }
