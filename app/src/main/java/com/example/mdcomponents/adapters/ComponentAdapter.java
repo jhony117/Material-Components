@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mdcomponents.R;
+import com.example.mdcomponents.databinding.ItemComponentBinding;
 import com.example.mdcomponents.utils.Component;
 import com.example.mdcomponents.utils.OnClickListener;
 
@@ -18,9 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ComponentAdapter extends RecyclerView.Adapter<Component.ViewHolder>{
-
-
+public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.ViewHolder>{
 
     private List<Component> mComponents;
     private OnClickListener mListener;
@@ -33,23 +32,18 @@ public class ComponentAdapter extends RecyclerView.Adapter<Component.ViewHolder>
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_component, parent,
-                false);
-        return new ViewHolder(view);
+        ItemComponentBinding binding = ItemComponentBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new ViewHolder(binding);
     }
 
-
-
-
     @Override
-    public void onBindViewHolder(@NonNull Component.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Component component = mComponents.get(position);
 
         holder.setClickListener(mListener, component);
 
-        holder.tvName.setText(component.getName());
-        holder.imgPhoto.setImageResource(component.getPhotoRes());
-
+        holder.binding.tvName.setText(component.getName());
+        holder.binding.imgPhoto.setImageResource(component.getPhotoRes());
     }
 
     @Override
@@ -64,26 +58,23 @@ public class ComponentAdapter extends RecyclerView.Adapter<Component.ViewHolder>
         }
     }
 
-    class VirewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
 
-        @BindView(R.id.imgPhoto)
-        AppCompatImageView imgPhoto;
-        @BindView(R.id.tvName)
-        TextView txName;
+        ItemComponentBinding binding;
 
-        View view;
-
-
-        public VirewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.view = itemView;
-            ButterKnife.bind
+        public ViewHolder(@NonNull ItemComponentBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
 
         void setClickListener(OnClickListener listener, Component component){
-            view.setOnClickListener(view1 -> listener.onClick(component));
+            binding.getRoot().setOnClickListener(view -> listener.onClick(component));
         }
-    }
+
+
+
 
     }
+}
+
 
