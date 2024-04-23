@@ -1,13 +1,18 @@
-package com.example.mdcomponents;
+package com.example.mdcomponents.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.mdcomponents.R;
+import com.example.mdcomponents.databinding.FragmentButtonBinding;
 import com.example.mdcomponents.utils.Component;
 import com.example.mdcomponents.utils.Constants;
 
@@ -25,14 +30,15 @@ public class ButtonFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+
+
+    FragmentButtonBinding binding;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private static Component mInstance;
-    public ButtonFragment() {
-        // Required empty public constructor
-    }
 
     public static Component getmInstance() {
         mInstance = new Component();
@@ -41,6 +47,12 @@ public class ButtonFragment extends Fragment {
         mInstance.setType(Constants.SCROLL);
         return mInstance;
     }
+
+    public ButtonFragment() {
+        // Required empty public constructor
+    }
+
+
 
     /**
      * Use this factory method to create a new instance of
@@ -67,12 +79,48 @@ public class ButtonFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_button, container, false);
+        // se usa ese inflate y no este  binding = FragmentButtonBinding.inflate(getLayoutInflater()); ,
+
+
+
+        binding = FragmentButtonBinding.inflate(inflater, container, false);
+        // Inflate the layout for this fragment using view binding
+
+
+
+        return  binding.getRoot();
+
     }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        binding.btnEnable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí va el código que se ejecutará cuando se haga clic en el botón
+                Toast.makeText(getActivity(), R.string.status_enabled, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+
 }

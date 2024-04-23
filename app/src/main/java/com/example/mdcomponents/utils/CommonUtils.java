@@ -3,7 +3,8 @@ package com.example.mdcomponents.utils;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.mdcomponents.ButtonFragment;
+import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
+import com.example.mdcomponents.fragments.ButtonFragment;
 
 public class CommonUtils {
 
@@ -24,6 +25,9 @@ public class CommonUtils {
                  break;
 
             //STATIC
+            case BottomNavigationBarFragment.TAG:
+                fragment = new BottomNavigationBarFragment();
+                break;
         }
         return  fragment;
     }

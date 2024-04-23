@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.mdcomponents.adapters.ComponentAdapter;
 import com.example.mdcomponents.databinding.ActivityMainBinding;
+import com.example.mdcomponents.fragments.ButtonFragment;
+import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
 import com.example.mdcomponents.utils.Component;
 import com.example.mdcomponents.utils.Constants;
 import com.example.mdcomponents.utils.OnClickListener;
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private void confingRecyvlerView() {
         binding.recyclerView.setAdapter(mAdapter);
         mAdapter.add(ButtonFragment.getmInstance());
+        mAdapter.add(BottomNavigationBarFragment.getmInstance());
     }
 
 
