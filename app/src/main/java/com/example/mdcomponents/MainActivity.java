@@ -14,6 +14,7 @@ import com.example.mdcomponents.adapters.ComponentAdapter;
 import com.example.mdcomponents.databinding.ActivityMainBinding;
 import com.example.mdcomponents.fragments.ButtonFragment;
 import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
+import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
 import com.example.mdcomponents.fragments.SnackBarFragment;
 import com.example.mdcomponents.fragments.TextFieldFragment;
 import com.example.mdcomponents.utils.Component;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         mAdapter.add(BottomNavigationBarFragment.getmInstance());
         mAdapter.add(SnackBarFragment.getmInstance());
         mAdapter.add(TextFieldFragment.getmInstance());
+        mAdapter.add(FloatingActionButtonFragment.getmInstance());
     }
 
 
