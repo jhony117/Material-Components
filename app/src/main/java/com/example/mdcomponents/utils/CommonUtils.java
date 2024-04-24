@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
 import com.example.mdcomponents.fragments.ButtonFragment;
+import com.example.mdcomponents.fragments.SnackBarFragment;
 
 public class CommonUtils {
 
@@ -27,6 +28,9 @@ public class CommonUtils {
             //STATIC
             case BottomNavigationBarFragment.TAG:
                 fragment = new BottomNavigationBarFragment();
+                break;
+            case SnackBarFragment.TAG:
+                fragment = new SnackBarFragment();
                 break;
         }
         return  fragment;
