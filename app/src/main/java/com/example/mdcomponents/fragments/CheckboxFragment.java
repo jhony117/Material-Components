@@ -12,31 +12,31 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.mdcomponents.R;
-import com.example.mdcomponents.databinding.FragmentFloatingActionButtonBinding;
+import com.example.mdcomponents.databinding.FragmentCheckBoxBinding;
 import com.example.mdcomponents.utils.Component;
 import com.example.mdcomponents.utils.Constants;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FloatingActionButtonFragment#newInstance} factory method to
+ * Use the {@link CheckboxFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FloatingActionButtonFragment extends Fragment {
+public class CheckboxFragment extends Fragment {
 
 
-    FragmentFloatingActionButtonBinding binding ;
+    FragmentCheckBoxBinding binding;
 
 
-    public static final String TAG = "Floating Action Button";
+    public static final String TAG = "Checkbox";
     private static Component mInstance;
-
     public static Component getmInstance() {
         mInstance = new Component();
         mInstance.setName(TAG);
-        mInstance.setPhotoRes(R.drawable.img_fab_default);
-        mInstance.setType(Constants.STATIC);
+        mInstance.setPhotoRes(R.drawable.img_checkboxes);
+        mInstance.setType(Constants.SCROLL);
         return mInstance;
     }
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,7 +47,7 @@ public class FloatingActionButtonFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FloatingActionButtonFragment() {
+    public CheckboxFragment() {
         // Required empty public constructor
     }
 
@@ -57,11 +57,11 @@ public class FloatingActionButtonFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FloatingActionButtonFragment.
+     * @return A new instance of fragment CheckBoxFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FloatingActionButtonFragment newInstance(String param1, String param2) {
-        FloatingActionButtonFragment fragment = new FloatingActionButtonFragment();
+    public static CheckboxFragment newInstance(String param1, String param2) {
+        CheckboxFragment fragment = new CheckboxFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -82,24 +82,30 @@ public class FloatingActionButtonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentFloatingActionButtonBinding.inflate(inflater, container, false);
+        binding = FragmentCheckBoxBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
 
+
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.fabDefault.setOnClickListener(view1 -> Toast.makeText(getActivity(), R.string.message_action_success,
-                Toast.LENGTH_SHORT).show());
-//tanto v como view1 son  nombres de variables que representan la vista que fue clicada , son instancias de view
-          //un nombre mas descriptivo seria clickedView
-        binding.fabLegacy.setOnClickListener(v -> {
-            binding.fabLegacy.setVisibility(View.GONE);
-            binding.tvLegacy.setVisibility(View.GONE);
-        });
 
+       /* TriStateCheckbox triStateCheckbox = binding.cbEnableIndeterminate;
+        triStateCheckbox.setState(TriStateCheckbox.State.INDETERMINATE);*/
+
+
+        binding.cbEnable.setOnClickListener(v -> {
+            String status = binding.cbEnable.isChecked() ? "Activo" : "Iactivo";
+            Toast.makeText(getActivity(), status, Toast.LENGTH_SHORT).show();
+
+           //Requiere libreria
+            // binding.cbEnableIndeterminate.setIndeterminate(binding.cbEnable.isChecked());
+        });
 
 
     }
@@ -108,5 +114,6 @@ public class FloatingActionButtonFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+
     }
 }

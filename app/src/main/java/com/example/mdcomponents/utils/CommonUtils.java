@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
 import com.example.mdcomponents.fragments.ButtonFragment;
+import com.example.mdcomponents.fragments.CheckboxFragment;
 import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
 import com.example.mdcomponents.fragments.SnackBarFragment;
 import com.example.mdcomponents.fragments.TextFieldFragment;
@@ -28,6 +29,9 @@ public class CommonUtils {
                  break;
             case TextFieldFragment.TAG:
                 fragment = new TextFieldFragment();
+                break;
+            case CheckboxFragment.TAG:
+                fragment = new CheckboxFragment();
                 break;
 
             //STATIC

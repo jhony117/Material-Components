@@ -31,6 +31,8 @@ android {
         viewBinding = true
     }
 
+
+
 }
 
 dependencies {
@@ -42,6 +44,8 @@ dependencies {
     implementation(libs.butterknife)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.triStateCheckbox)
+    implementation(libs.indeterminate)
     annotationProcessor(libs.annotationButterKnife)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
