@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
 import com.example.mdcomponents.fragments.ButtonFragment;
+import com.example.mdcomponents.fragments.CardFragment;
 import com.example.mdcomponents.fragments.CheckboxFragment;
 import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
 import com.example.mdcomponents.fragments.SnackBarFragment;
@@ -32,6 +33,9 @@ public class CommonUtils {
                 break;
             case CheckboxFragment.TAG:
                 fragment = new CheckboxFragment();
+                break;
+            case CardFragment.TAG:
+                fragment = new CardFragment();
                 break;
 
             //STATIC
