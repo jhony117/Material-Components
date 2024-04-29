@@ -1,13 +1,18 @@
 package com.example.mdcomponents.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.mdcomponents.R;
 import com.example.mdcomponents.databinding.FragmentCardBinding;
 import com.example.mdcomponents.utils.Component;
@@ -83,6 +88,31 @@ public class CardFragment extends Fragment {
         binding = FragmentCardBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        RequestOptions options = new RequestOptions()
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop();
+
+        Glide.with(this)
+                .load("https://th.bing.com/th/id/R.36f16f57ae735d87247c6dec403a48e2?rik=%2bqz0TxjX3Ds5jQ&pid=ImgRaw&r=0")
+                .into(binding.imgCardLarge);
+
+        binding.chipFirst.setOnClickListener(v -> {
+            Toast.makeText(getActivity(), "First Chip", Toast.LENGTH_SHORT).show();
+        });
+
+        binding.chipSecond.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked){
+                Toast.makeText(getActivity(), "Checked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.chipThird.setOnCloseIconClickListener(v -> binding.chipThird.setVisibility(View.GONE));
     }
 
     @Override

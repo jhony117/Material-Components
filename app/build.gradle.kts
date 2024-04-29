@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.triStateCheckbox)
     implementation(libs.indeterminate)
+    implementation(libs.glide)
     annotationProcessor(libs.annotationButterKnife)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
