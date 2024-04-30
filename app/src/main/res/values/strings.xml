@@ -186,4 +186,6 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="menu_popup_menu">Popup menu</string>
+    <string name="menu_hint_autocomplete">autocomplete</string>
 </resources>

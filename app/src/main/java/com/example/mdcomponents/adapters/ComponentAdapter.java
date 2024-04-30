@@ -14,6 +14,7 @@ import com.example.mdcomponents.databinding.ItemComponentBinding;
 import com.example.mdcomponents.utils.Component;
 import com.example.mdcomponents.utils.OnClickListener;
 
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -56,6 +57,11 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
             mComponents.add(component);
             notifyItemInserted(mComponents.size() - 1);
         }
+    }
+
+    public void reverse() {
+        Collections.reverse(mComponents);
+        notifyDataSetChanged();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

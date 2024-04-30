@@ -8,6 +8,7 @@ import com.example.mdcomponents.fragments.ButtonFragment;
 import com.example.mdcomponents.fragments.CardFragment;
 import com.example.mdcomponents.fragments.CheckboxFragment;
 import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
+import com.example.mdcomponents.fragments.MenuFragment;
 import com.example.mdcomponents.fragments.SnackBarFragment;
 import com.example.mdcomponents.fragments.TextFieldFragment;
 
@@ -47,6 +48,9 @@ public class CommonUtils {
                 break;
             case FloatingActionButtonFragment.TAG:
                 fragment = new FloatingActionButtonFragment();
+                break;
+            case MenuFragment.TAG:
+                fragment = new MenuFragment();
                 break;
         }
         return  fragment;

@@ -1,6 +1,8 @@
 package com.example.mdcomponents;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.mdcomponents.databinding.ActivityStaticBinding;
@@ -50,6 +52,15 @@ public class StaticActivity extends AppCompatActivity {
             actionBar.setTitle(nameFragment);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        //Menu inflado
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bottom_nav, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
