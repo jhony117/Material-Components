@@ -3,6 +3,7 @@ package com.example.mdcomponents.utils;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.mdcomponents.fragments.AlertDialogFragment;
 import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
 import com.example.mdcomponents.fragments.ButtonFragment;
 import com.example.mdcomponents.fragments.CardFragment;
@@ -51,6 +52,9 @@ public class CommonUtils {
                 break;
             case MenuFragment.TAG:
                 fragment = new MenuFragment();
+                break;
+                case AlertDialogFragment.TAG:
+                fragment = new AlertDialogFragment();
                 break;
         }
         return  fragment;
