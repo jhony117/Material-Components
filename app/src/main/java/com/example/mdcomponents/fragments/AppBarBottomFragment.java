@@ -16,7 +16,9 @@ import android.view.ViewGroup;
 
 import com.example.mdcomponents.R;
 import com.example.mdcomponents.databinding.FragmentAppBarBottomBinding;
+import com.example.mdcomponents.utils.BottomAppBarCutCornersTopEdge;
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.snackbar.Snackbar;
 
 /**
@@ -79,6 +81,20 @@ public class AppBarBottomFragment extends DialogFragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentAppBarBottomBinding.inflate(inflater, container, false);
+        BottomAppBarCutCornersTopEdge topEdge = new BottomAppBarCutCornersTopEdge(
+                binding.bottomAppBar.getFabCradleMargin(),
+                binding.bottomAppBar.getFabCradleRoundedCornerRadius(),
+                binding.bottomAppBar.getCradleVerticalOffset()
+        );
+
+        MaterialShapeDrawable shapeDrawable = (MaterialShapeDrawable)binding.bottomAppBar.getBackground();
+        shapeDrawable.setShapeAppearanceModel(
+                shapeDrawable.getShapeAppearanceModel()
+                        .toBuilder()
+                        .setTopEdge(topEdge)
+                        .build()
+        );
+
 
     return binding.getRoot();
 

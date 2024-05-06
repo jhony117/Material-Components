@@ -11,6 +11,7 @@ import com.example.mdcomponents.fragments.CardFragment;
 import com.example.mdcomponents.fragments.CheckboxFragment;
 import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
 import com.example.mdcomponents.fragments.MenuFragment;
+import com.example.mdcomponents.fragments.PickerFragment;
 import com.example.mdcomponents.fragments.SnackBarFragment;
 import com.example.mdcomponents.fragments.TextFieldFragment;
 
@@ -59,6 +60,9 @@ public class CommonUtils {
                 break;
             case AppBarFragment.TAG:
                 fragment = new AppBarFragment();
+                break;
+            case PickerFragment.TAG:
+                fragment = new PickerFragment();
                 break;
         }
         return  fragment;

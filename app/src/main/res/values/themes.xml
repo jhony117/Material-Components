@@ -4,6 +4,9 @@
     <style name="Base.Theme.MDComponents" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeApparance.MyTheme.SmallComponent</item>
+
     </style>
 
     <style name="Theme.MDComponents" parent="Base.Theme.MDComponents" />
@@ -19,6 +22,10 @@
 
     <style name="FullScreenDialog" parent="ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Window.Fullscreen">
         <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+    </style>
+
+    <style name="FullScreenPicker" parent="ThemeOverlay.Material3.MaterialCalendar.Fullscreen">
+        <item name="android:windowIsFloating">false</item>
     </style>
 
 </resources>
