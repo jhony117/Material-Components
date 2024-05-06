@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mdcomponents.fragments.AlertDialogFragment;
+import com.example.mdcomponents.fragments.AppBarFragment;
 import com.example.mdcomponents.fragments.BottomNavigationBarFragment;
 import com.example.mdcomponents.fragments.ButtonFragment;
 import com.example.mdcomponents.fragments.CardFragment;
@@ -55,6 +56,9 @@ public class CommonUtils {
                 break;
                 case AlertDialogFragment.TAG:
                 fragment = new AlertDialogFragment();
+                break;
+            case AppBarFragment.TAG:
+                fragment = new AppBarFragment();
                 break;
         }
         return  fragment;
