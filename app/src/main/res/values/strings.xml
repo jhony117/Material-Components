@@ -194,4 +194,17 @@
     <string name="picker_fullscreen">Picker Fullscreen</string>
     <string name="picker_title">Selecciona una fecha</string>
     <string name="dialog_negative">Negative button</string>
+    <string name="navigation_drawer_modal">Modal Drawer\n</string>
+    <string name="navigation_drawer_bottom">Bottom  Drawer</string>
+    <string name="sheets_bottom_standar">Standar Bottom</string>
+    <string name="sheets_bottom_modal">sheets modal</string>
+    <string name="sheetd_bottom_standar_place_type">Courses Online</string>
+    <string name="sheets_bottom_standar_place_title">Cursos android ANT</string>
+    <string name="sheets_bottom_standar_place_link">website</string>
+    <string name="sheets_bottom_standar_place_call">Call</string>
+    <string name="sheets_bottom_standar_place_save">Save</string>
+    <string name="sheetd_bottom_standar_place_timeline">2 days ago</string>
+    <string name="sheetd_bottom_standar_place_address">12342 Main Street</string>
+    <string name="sheetd_bottom_standar_place_schedule">Closed</string>
+    <string name="sheetd_bottom_standar_place_make_question">Ask something</string>
 </resources>

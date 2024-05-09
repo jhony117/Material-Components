@@ -20,7 +20,9 @@ import com.example.mdcomponents.fragments.CardFragment;
 import com.example.mdcomponents.fragments.CheckboxFragment;
 import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
 import com.example.mdcomponents.fragments.MenuFragment;
+import com.example.mdcomponents.fragments.NavigationDrawerFragment;
 import com.example.mdcomponents.fragments.PickerFragment;
+import com.example.mdcomponents.fragments.SheetsBottomFragment;
 import com.example.mdcomponents.fragments.SnackBarFragment;
 import com.example.mdcomponents.fragments.TextFieldFragment;
 import com.example.mdcomponents.utils.Component;
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         mAdapter.add(AlertDialogFragment.getmInstance());
         mAdapter.add(AppBarFragment.getmInstance());
         mAdapter.add(PickerFragment.getmInstance());
+        mAdapter.add(NavigationDrawerFragment.getmInstance());
+        mAdapter.add(SheetsBottomFragment.getmInstance());
         mAdapter.reverse();
     }
 
