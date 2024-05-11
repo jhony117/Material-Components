@@ -207,4 +207,5 @@
     <string name="sheetd_bottom_standar_place_address">12342 Main Street</string>
     <string name="sheetd_bottom_standar_place_schedule">Closed</string>
     <string name="sheetd_bottom_standar_place_make_question">Ask something</string>
+    <string name="hiny_username">Username</string>
 </resources>

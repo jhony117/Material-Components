@@ -11,6 +11,7 @@ import com.example.mdcomponents.fragments.CardFragment;
 import com.example.mdcomponents.fragments.CheckboxFragment;
 import com.example.mdcomponents.fragments.FloatingActionButtonFragment;
 import com.example.mdcomponents.fragments.MenuFragment;
+import com.example.mdcomponents.fragments.MotionFragment;
 import com.example.mdcomponents.fragments.NavigationDrawerFragment;
 import com.example.mdcomponents.fragments.PickerFragment;
 import com.example.mdcomponents.fragments.SheetsBottomFragment;
@@ -71,6 +72,9 @@ public class CommonUtils {
                 break;
             case SheetsBottomFragment.TAG:
                 fragment =  new SheetsBottomFragment();
+                break;
+            case MotionFragment.TAG:
+                fragment =  new MotionFragment();
                 break;
         }
         return  fragment;

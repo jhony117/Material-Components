@@ -105,6 +105,10 @@ mBottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetC
             }
 
         });
+        binding.btnModal.setOnClickListener(v -> {
+            ModalBottomSheetFullScreenFragment fragment = new ModalBottomSheetFullScreenFragment();
+            fragment.show(getParentFragmentManager().beginTransaction(), ModalBottomSheetFullScreenFragment.TAG);
+        });
 
 
     }
