@@ -3,6 +3,7 @@ package com.example.mdcomponents.fragments;
 import android.app.Dialog;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
+import androidx.transition.TransitionManager;
 
 import com.example.mdcomponents.R;
 import com.example.mdcomponents.databinding.FragmentModalBottomSheetFullScreenBinding;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.transition.MaterialFadeThrough;
+import com.google.android.material.transition.SlideDistanceProvider;
 
 
 public class ModalBottomSheetFullScreenFragment extends BottomSheetDialogFragment {
@@ -51,6 +55,13 @@ public class ModalBottomSheetFullScreenFragment extends BottomSheetDialogFragmen
         mBottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View view, int newState) {
+
+                MaterialFadeThrough fadeThrough = new MaterialFadeThrough();
+                fadeThrough.setSecondaryAnimatorProvider(new SlideDistanceProvider(Gravity.TOP));
+                fadeThrough.setDuration(250L);
+
+                TransitionManager.beginDelayedTransition(binding.containerBar, fadeThrough);
+
 
                 int statusBarColor = ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark);
 

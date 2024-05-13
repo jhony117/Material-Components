@@ -10,11 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewEnd"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/motion_view_end_heigh"
         android:visibility="gone"
         android:background="@android:color/white"
         android:layout_gravity="bottom">
 
+        <!--472-->
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,11 +54,40 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <include layout="@layout/fragment_button"
+       <FrameLayout
+           android:id="@+id/viewOut"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="visible"
+           app:layout_constraintTop_toBottomOf="@id/containerBar">
+
+           <include layout="@layout/fragment_button"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/viewIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/containerBar"/>
-t
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/containerBar">
+
+
+            <include layout="@layout/fragment_check_box"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_padding_bottom_scroll"
+                android:text="@string/motion_button_back"
+                />
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

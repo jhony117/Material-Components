@@ -21,4 +21,5 @@
     <dimen name="sheet_bottom_standar_peek_height">80dp</dimen>
     <dimen name="item_img_size">56dp</dimen>
     <dimen name="img_bar_size">40dp</dimen>
+    <dimen name="motion_view_end_heigh">472dp</dimen>
 </resources>
